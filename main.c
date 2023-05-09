@@ -25,14 +25,15 @@ int main() {
     puts("\n\nTask2\n"
          "Input your string here:");
 
-    char *string = (char *) malloc(sizeof(char));
+    char *string = NULL;
 
     fflush(stdin);
 
     string = input_string(string);
-
-    puts("This is your string:");
-    printf("%s", string);
+    if (string != NULL) {
+        puts("This is your string:");
+        printf("%s", string);
+    } else puts("Sting is empty");
 
     free(string);
 
